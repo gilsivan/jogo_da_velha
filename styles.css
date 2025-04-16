@@ -1,0 +1,159 @@
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #00d9ff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  body.dark {
+    background: linear-gradient(135deg, #1a1a1d, #4e4e50);
+    color: #ff00d9;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    text-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+  }
+  
+  .game-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #00d9ff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00d9ff;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .cell {
+    width: 100%;
+    aspect-ratio: 1; /* Garante células quadradas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00d9ff;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00d9ff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .cell:hover {
+    background: #1c1c1e;
+    transform: scale(1.1);
+  }
+  
+  body.dark .cell {
+    background: rgba(50, 50, 50, 0.9);
+    color: #ff00d9;
+    border-color: #ff00d9;
+  }
+  
+  body.dark .cell:hover {
+    background: #333;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    background: #00d9ff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background: #008fb3;
+    transform: scale(1.1);
+  }
+  
+  body.dark button {
+    background: #ff00d9;
+    color: #fff;
+  }
+  
+  body.dark button:hover {
+    background: #cc0099;
+  }
+  
+  #status {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    text-shadow: 0 0 5px #00d9ff;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .cell {
+      font-size: 2rem;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 8px 15px;
+    }
+  
+    .game-container {
+      padding: 10px;
+      margin: 20px auto;
+      border-width: 1px;
+    }
+  }
+  
+  .cell {
+    cursor: pointer; /* Atualizado para remover o traço de texto */
+    user-select: none; /* Impede que o texto dentro seja selecionado */
+  }  
+
+
+  .highlight {
+    animation: pulse 1s ease-out infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      background-color: #fff;
+    }
+    40% {
+      transform: scale(1.1);
+      background-color: #00FF00;
+    }
+    80% {
+      transform: scale(1);
+      background-color: #fff;
+    }
+  }
+  .cell {
+    transition: all 0.3s ease;
+  }
+  
+  .cell[data-player="X"] {
+    background-color: #f0a500; /* Cor para X */
+  }
+  
+  .cell[data-player="O"] {
+    background-color: #007bff; /* Cor para O */
+  }
